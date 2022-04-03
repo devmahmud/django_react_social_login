@@ -21,7 +21,7 @@ pip install -r requirements.txt
 Make migrations & Migrate the db:
 
 ```bash
-python manage.py makemigration
+python manage.py makemigrations
 python manage.py migrate
 ```
 
