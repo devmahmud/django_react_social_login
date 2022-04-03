@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
+import fbLogin from './services/fbLogin';
+import googleLogin from './services/googleLogin';
 import './App.css';
 
 function App() {
+  const responseFacebook = async (response) => {
+    let fbResponse = await fbLogin(response.accessToken);
+    console.log(fbResponse);
+    console.log(response);
+  };
+
+  const responseGoogle = async (response) => {
+    let googleResponse = await googleLogin(response.accessToken);
+    console.log(googleResponse);
+    console.log(response);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Login with Facebook & Google</h1>
+
+      <FacebookLogin
+        appId="YOUR_FACEBOOK_APP_ID"
+        fields="name,email,picture"
+        callback={responseFacebook}
+      />
+      <br />
+      <br />
+
+      <GoogleLogin
+        clientId="YOUR_GOOGLE_CLIENT_ID"
+        buttonText="LOGIN WITH GOOGLE"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+      />
     </div>
   );
 }

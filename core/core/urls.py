@@ -39,6 +39,7 @@ urlpatterns = [
     path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('rest-auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
     path('rest-auth/google/', GoogleLogin.as_view(), name='google_login'),
+    path('accounts/', include('allauth.urls'), name='socialaccount_signup'),
     path('swagger/', schema_view.with_ui('swagger',
          cache_timeout=0), name='schema-swagger-ui'),
     path('redoc', schema_view.with_ui(
