@@ -1,6 +1,6 @@
 asgiref==3.5.0
 autopep8==1.6.0
-certifi==2021.10.8
+certifi==2022.12.7
 cffi==1.15.0
 charset-normalizer==2.0.12
 coreapi==2.3.3
