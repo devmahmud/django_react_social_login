@@ -5,7 +5,7 @@ cffi==1.15.0
 charset-normalizer==2.0.12
 coreapi==2.3.3
 coreschema==0.0.4
-cryptography==36.0.2
+cryptography==39.0.1
 defusedxml==0.7.1
 dj-rest-auth==2.2.4
 Django==4.0.3
